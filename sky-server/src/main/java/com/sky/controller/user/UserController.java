@@ -21,7 +21,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/user/user")
-@Api(tags = "C端用户相关接口")
+@Api(tags = "C端-用户相关接口")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -48,5 +48,11 @@ public class UserController {
                 .build();
 
         return Result.success(userLoginVO);
+    }
+
+    @PostMapping("/logout")
+    @ApiOperation("用户退出")
+    public Result logout() {
+        return Result.success();
     }
 }

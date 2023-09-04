@@ -115,7 +115,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         Employee employee = employeeMapper.getById(passwordEditDTO.getEmpId());
 
         if (!oldPassword.equals(employee.getPassword())) {
-            throw new PasswordErrorException(MessageConstant.PASSWORD_ERROR);
+            throw new PasswordErrorException(MessageConstant.PASSWORD_EDIT_FAILED);
         }
 
         employee.setPassword(newPassword);
